@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1> Hello World</h1>
+<p th:text="${objeto}"></p>
+
+<table>
+    <p th:text="${pessoas.size()}"></p>
+    <tr th:each="pessoa:${pessoas}">
+        <td th:text="${pessoa.nome}"></td>
+        <td th:text="${pessoa.idade}"></td>
+    </tr>
+</table>
+
+<a th:href="@{'/editar/' + ${pessoas.size()}}">Editar</a>
+
 </body>
 </html>
